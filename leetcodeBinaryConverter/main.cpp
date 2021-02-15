@@ -3,20 +3,20 @@
 #include <string>
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
     //Example of the input : [1,7,0,7,-8,null,null]
     string in;
-    cin >> in;
+    //cin >> in;
 
     vector<pair<string,string>> nodes;
 
     /*Convert the input to array of nodes*/
     string node = "";
     int j = 1;
-    while (in[j] != ']')
+    while (argv[1][j] != ']')
     {
-        if (in[j] == ',')
+        if (argv[1][j] == ',')
         {
             nodes.push_back(make_pair(node,""));
             node = "";
@@ -24,9 +24,9 @@ int main()
         }
         else
         {
-            node += in[j];
+            node += argv[1][j];
             j++;
-            if (in[j] == ']')
+            if (argv[1][j] == ']')
             {
                 nodes.push_back(make_pair(node,""));
                 node = "";
