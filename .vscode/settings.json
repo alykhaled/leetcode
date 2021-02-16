@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "utility": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "vector": "cpp",
+        "set": "cpp",
+        "deque": "cpp",
+        "list": "cpp"
     }
 }
