@@ -8,6 +8,16 @@
         "list": "cpp",
         "unordered_map": "cpp",
         "queue": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ios": "cpp",
+        "stack": "cpp",
+        "xhash": "cpp",
+        "xlocinfo": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "cstdlib": "cpp",
+        "algorithm": "cpp",
+        "cmath": "cpp",
+        "unordered_set": "cpp"
     }
 }

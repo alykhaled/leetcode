@@ -5,74 +5,33 @@
 #include <stack>
 using namespace std;
 
-int main()
+int scoreOfParentheses(string s) 
 {
-    string s = "(())((()))";
-    stack<char> m;
-    int score = 0;
-    int levels = 0;
-    bool first = true;
+    stack<char> st;
+    int score = 0, levels = 0;
     for (int i = 0; i < s.length(); i++)
     {
-        if (m.empty())
-        {
-            m.push(s[i]);
-            continue;
-        }
-        else if (s[i] == '(')
+        if (s[i] == '(')
         {
             levels++;
+            st.push(s[i]);
         }
-        else if (s[i] == ')' && m.top() == '(')
+        else if (!st.empty() && s[i] == ')' && st.top() == '(')
         {
-            if (levels == 0 || first)
-            {
-                score += pow(2,levels - 1);
-                m.pop();
-                for (int i = 0; i < levels -1; i++)
-                {
-                    m.pop();
-                }
-            }
-            else
-            {
-                levels--;
-            }
-            
-            first = false;  
+            score += pow(2,(levels-1));
+            levels--;
+            while (!st.empty()) { st.pop(); }     
         }
         else
         {
-            m.push(s[i]);
+            levels--;
         }
     }
-    
-    // for (char c : s)
-    // {
-    //     if (m.empty())
-    //     {
-    //         m.push(c);
-    //         continue;
-    //     }
-    //     if (c == ')' && m.top() == '(')
-    //     {
-    //         score ++;
-    //         m.pop();
-    //     }
-    //     else
-    //     {
-    //         m.push(c);
-    //     }
-    // }
-    cout << score;
+    return score;
 }
 
-/*
-
-(()(()))
-
-(()) 
-
-
-
-*/
+int main()
+{
+    string s = "(()(()))";
+    cout << scoreOfParentheses(s);
+}

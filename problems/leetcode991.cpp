@@ -9,45 +9,49 @@
 using namespace std;
 
 int minMove = INT_MAX;
-int first = false;
+int ok = false;
 void recure(int x,int y , int operation)
 {
-    if (x > y && false)
+    if (x > y)
     {
+        recure(x-1,y,operation+1);
         return;
     }
-    if (x == y)
+    else if (x == y)
     {
         minMove = min(minMove,operation);
         return;
     }
-    first = true;
-    recure(x*2,y,operation+1);
-    recure(x-1,y,operation+1);
+    else 
+    {
+        recure(x*2,y,operation+1);
+        if(x > 0){recure(x-1,y,operation+1);}
+    }
 }
 
 int brokenCalc(int x, int y) 
 {
-    if (x > y)
-    {
-        return x - y;
-    }
-    if (x == y)
-    {
-        return 0;
-    }
-    if (x < y)
-    {
-        if (y % 2 == 0)
-        {
-            return brokenCalc(x,y/2)+1;
-        }
-        else
-        {
-            return brokenCalc(x,y+1)+1;
-        }
-    }
-    return 0;
+    // if (x > y)
+    // {
+    //     return x - y;
+    // }
+    // if (x == y)
+    // {
+    //     return 0;
+    // }
+    // if (x < y)
+    // {
+    //     if (y % 2 == 0)
+    //     {
+    //         return brokenCalc(x,y/2)+1;
+    //     }
+    //     else
+    //     {
+    //         return brokenCalc(x,y+1)+1;
+    //     }
+    // }
+    recure(x,y,0);
+    return minMove;
 }
 
 int main()

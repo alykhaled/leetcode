@@ -1,0 +1,16 @@
+{
+    "success": true,
+    "is_verified": true,
+    "user_profile": {
+        "user_id": 2095522701,
+        "name": "Aly Khaled",
+        "photo_url": null,
+        "username": "alykhaled"
+    },
+    "auth_token": "c70094a0ad1dc474e81c642e3f7eb77151e21fa3",
+    "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MzMxNTIxNTY3NTYsImp0aSI6IjUwY2Q3OWJkZGFkNzQxYzM5NWU2NWJkM2EyZWY1OTVmIiwidXNlcl9pZCI6MTgyMTI5NTJ9.YBOndCb7K7pla8u6fz7lTBz-jWlraa4VQCG4cDgA2Ds",
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2MTU3MDU2LCJqdGkiOiI0NWU0ZjBiMmE0MmE0MjQzYTM3ZDc4ZmU1ZDgyZjBkNSIsInVzZXJfaWQiOjE4MjEyOTUyfQ.szf-7VeXGxmKceYswFSaFc3g8XqPI4-lh2b9OwIv6Mw",
+    "is_waitlisted": false,
+    "is_onboarding": false
+}
+
