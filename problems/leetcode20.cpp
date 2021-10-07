@@ -6,35 +6,23 @@ using namespace std;
 
 int main()
 {
-    string s = ")()(())";
-    stack<char> m;
-    int valid = 0;
-    int maxv = 0;
-    for (char c : s)
+    string s = "(){}}{";
+    stack<char> st;
+    st.push(s[0]);
+    for(int i = 1; i < s.length(); i++)
     {
-        if (m.empty())
+        if(st.empty())
         {
-            m.push(c);
-            continue;
-
+            st.push(s[i]);
         }
-        if (c == ')' && m.top() == '(')
+        else if((s[i] == ')' && st.top() == '(') || (s[i] == '}' && st.top() == '{') || (s[i] == ']' && st.top() == '['))
         {
-            m.pop();
-            valid += 2;
-            maxv = max(maxv,valid);
+            st.pop();
         }
-        else if(valid == 0)
+        else
         {
-            valid = 0;
-            m.push(c);
+            st.push(s[i]);
         }
     }
-    cout << maxv;
+    cout << (st.size() == 0);
 }
-
-/*
-
-({[(]})
-
-*/
