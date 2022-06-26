@@ -8,40 +8,39 @@
 #include <stack>
 using namespace std;
 
-vector<int> productExceptSelf(vector<int>& nums) 
-{
-    vector<int> ans;
-    for (int i = 0; i < nums.size(); i++)
-    {
-        int left = i-1;
-        int right = i + 1;
-        int sum = 1;
-        while (left >= 0 || right <= nums.size()-1)
-        {
-            if (left >= 0)
-            {
-                sum *= nums[left];
-                left--;
-            }
-            if (right <= nums.size()-1)
-            {
-                sum *= nums[right];
-                right++;
-            }
-        }
-        ans.push_back(sum);
-    }
-    return ans;       
-}
+
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL), cout.tie(NULL);
-    vector<int> a = {1,2,3,4};
-    vector<int> ans = productExceptSelf(a);
-    for (auto &&i : ans)
+    int n;
+    cin >> n;
+    int oldestNonKid = 0;
+    int sumDistance = 0;
+    int sumHasKid = 0;
+    int sumHasNoKid = 0;
+    for (int i = 0; i < n; i++)
     {
-        cout << i << " ";
+        int age, type,distance;
+        cout << "Enter age: " ;
+        cin >> age;
+        cout << "Enter type (0 for has a new kid and 1 for hasn't new kid): " ;
+        cin >> type;
+        cout << "Enter distance: " ;
+        cin >> distance;
+        if (type == 1)
+        {
+            if (age > oldestNonKid)
+            {
+                oldestNonKid = age;
+            }
+            sumHasNoKid++;
+        }
+        else
+        {
+            sumHasKid++;
+            sumDistance += distance;
+        }
     }
-    
+    cout << "The oldest non-kid kangaroo in the zoo has age of :" << oldestNonKid << endl;
+    cout << "The average distance of kangaroos that have a new kid is: " << sumDistance / sumHasKid << endl;
+
 }

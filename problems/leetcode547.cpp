@@ -40,19 +40,8 @@ int main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(NULL), cout.tie(NULL);
-    int n,k;
-    cin>>n>>k;
-    vector<int> calCounts(n);
-    for(int i=0;i<n;i++)
-    {
-        cin>>calCounts[i];
-    }
-    if(isPossible(calCounts,k))
-    {
-        cout<<"YES";
-    }
-    else
-    {
-        cout<<"NO";
-    }
+    vector<int> calCounts={1,2,2,4,5,8,9};
+    int requiredCals=5;
+    cout<<isPossible(calCounts,requiredCals);
+    return 0;
 }
